@@ -205,6 +205,33 @@ button {
     color: white;
 }
 
+.btn-text {
+    font: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+
+.btn-loading .btn-text {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.btn-loading::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    border: 6px solid transparent;
+    border-top-color: var(--white);
+    border-radius: 50%;
+    animation: spinner 1s ease infinite;
+}
+
 /* animation */
 @keyframes fadeOut {
     0% {
@@ -223,6 +250,16 @@ button {
 
     100% {
         opacity: 1;
+    }
+}
+
+@keyframes spinner {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(2turn);
     }
 }
 

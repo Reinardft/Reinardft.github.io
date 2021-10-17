@@ -94,11 +94,21 @@ document.addEventListener("click", (e) =>{
 //---------- contact form sumbit to google spreadsheet ----------
 
 const scriptURL = 'https://script.google.com/macros/s/AKfycbxVmPWlGxM9GzYZNSZta3pVr3IIRxf1kdEPGVUfa7WW6Nc7g6utfY25S36vrkJler5i/exec'
-const form = document.forms['reinard-contact-form']
+const form = document.forms['reinard-contact-form'];
+const btnSpin = document.querySelector(".btn-spin");
 
 form.addEventListener('submit', e => {
   e.preventDefault()
+
+  btnSpin.classList.add("btn-loading");
+
   fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-    .then(response => console.log('Success!', response))
+    .then(response =>{
+        console.log('Success!', response)
+        setTimeout(()=>{
+            btnSpin.classList.remove("btn-loading");
+        },1000);
+        form.reset();
+    })
     .catch(error => console.error('Error!', error.message))
 })
