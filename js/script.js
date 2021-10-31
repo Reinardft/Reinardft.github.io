@@ -30,15 +30,6 @@ function togglePortofolioPopup(){
 }
 document.querySelector(".pp-close").addEventListener("click", togglePortofolioPopup);
 
-//---------- hide portofolio popup when click outside pp-inner box ----------
-
-document.addEventListener("click", (e) =>{
-    if(e.target.classList.contains("pp-inner")){
-        togglePortofolioPopup();
-    }
-});
-
-
 function portofolioItemDetails(portofolioItem){
     document.querySelector(".pp-thumbnail img").src =
     portofolioItem.querySelector(".portofolio-item-thumbnail img").src;
@@ -50,6 +41,49 @@ function portofolioItemDetails(portofolioItem){
     portofolioItem.querySelector(".portofolio-item-details").innerHTML;
 
 }
+
+//---------- hide portofolio popup when click outside pp-inner box ----------
+
+document.addEventListener("click", (e) =>{
+    if(e.target.classList.contains("pp-inner")){
+        togglePortofolioPopup();
+    }
+});
+
+//---------- certificate item ----------
+
+document.addEventListener("click", (e) =>{
+    if(e.target.classList.contains("view-certificate-btn")){
+        toggleCertificatePopup();
+        document.querySelector(".certificate-popup").scrollTo(0,0);
+        certificateItemDetails(e.target.parentElement);
+    }
+});
+
+function toggleCertificatePopup(){
+    document.querySelector(".certificate-popup").classList.toggle("open");
+    document.body.classList.toggle("hide-scrolling");
+    document.querySelector(".main").classList.toggle("fade-out");
+}
+document.querySelector(".pp-close").addEventListener("click", togglePortofolioPopup);
+
+function certificateItemDetails(certificateItem){
+    document.querySelector(".cp-thumbnail img").src =
+    certificateItem.querySelector(".certificate-item-thumbnail img").src;
+
+    document.querySelector(".cp-header h3").innerHTML =
+    certificateItem.querySelector(".certificate-item-title").innerHTML;
+
+}
+
+//---------- hide certificate popup when click outside pp-inner box ----------
+
+document.addEventListener("click", (e) =>{
+    if(e.target.classList.contains("cp-inner")){
+        toggleCertificatePopup();
+    }
+});
+
 
 //---------- toogle navbar animation script ----------
 
