@@ -65,7 +65,7 @@ function toggleCertificatePopup(){
     document.body.classList.toggle("hide-scrolling");
     document.querySelector(".main").classList.toggle("fade-out");
 }
-document.querySelector(".pp-close").addEventListener("click", togglePortofolioPopup);
+document.querySelector(".cp-close").addEventListener("click", toggleCertificatePopup);
 
 function certificateItemDetails(certificateItem){
     document.querySelector(".cp-thumbnail img").src =
