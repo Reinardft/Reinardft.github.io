@@ -974,6 +974,10 @@ button {
     .portofolio-item {
         width: calc(50% - 30px);
     }
+
+    .certificate-item {
+        width: calc(50% - 30px);
+    }
 }
 
 @media(max-width:767px) {
@@ -993,7 +997,15 @@ button {
         width: calc(100% - 30px);
     }
 
+    .certificate-item {
+        width: calc(100% - 30px);
+    }
+
     .pp-inner {
+        padding: 30px 15px;
+    }
+
+    .cp-inner {
         padding: 30px 15px;
     }
 
@@ -1021,6 +1033,10 @@ button {
     }
 
     .pp-header h3 {
+        font-size: 18px;
+    }
+
+    .cp-header h3 {
         font-size: 18px;
     }
 }
